@@ -11,9 +11,15 @@ public class StringUtil {
 	public static String PASSWORD  = "password";
 	public static String ADDRESS  = "address";
 	
-	public static String INSERT_USER = "INSERT INTO TABLE USERS "+
+	public static String INSERT_USER = "INSERT INTO USERS"+
 										"(user_name, first_name, last_name, dob, gender, email, phone_number,password, address)"
 										+ "VALUES(?,?,?,?,?,?,?,?,?)";
 	
 	
+	
+	public static final String SUCCESS_REGISTER_MESSAGE = "Successfully Registered";
+	public static final String REGISTER_ERROR_MESSAGE	= "Please correct the form data";
+	public static final String SERVER_ERROR_MESSAGE		= "An unexpected server error occurred";
+	public static final String SUCCESS_MESSAGE			= "successMessage";
+	public static final String ERROR_MESSAGE			= "errorMessage";
 }

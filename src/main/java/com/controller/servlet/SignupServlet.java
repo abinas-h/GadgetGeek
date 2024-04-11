@@ -9,13 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.controller.DatabaseController;
 import com.model.User;
 import com.util.StringUtil;
 
+	
 
 
 @WebServlet("/signup")
 public class SignupServlet extends HttpServlet{
+	
+	DatabaseController databaseController = new DatabaseController();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,7 +35,17 @@ public class SignupServlet extends HttpServlet{
 		
 //		this is the last work done where adding new user work is done 
 		User user = new User(fname, lname, dob, gender, email, phoneNumber, phoneNumber, username, password, address);
-	
+		
+		
+		int result = databaseController.addUser(user);
+		
+		if(result == 1) {
+			System.out.println("vayo hai vayo");
+		}else if (result == 0) {
+			System.out.println("khoy k ho mileyna");
+		}else {
+			System.out.println("hudai vayena");
+		}
 	}
 	
 }
