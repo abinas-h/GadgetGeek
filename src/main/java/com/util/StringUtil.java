@@ -11,6 +11,7 @@ public class StringUtil {
 	public static String PASSWORD  = "password";
 	public static String ADDRESS  = "address";
 	
+	
 	public static String INSERT_USER = "INSERT INTO USERS"+
 										"(user_name, first_name, last_name, dob, gender, email, phone_number,password, address)"
 										+ "VALUES(?,?,?,?,?,?,?,?,?)";
