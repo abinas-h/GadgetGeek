@@ -4,12 +4,19 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.model.User;
+
 import com.util.StringUtil;
 
 public class DatabaseController {
+	
+	
+	
+//--------------------------------------------------------------------------------------------------------------	
+//	this method returns connection of the database
 	
 	public Connection getConnection() throws ClassNotFoundException, SQLException {
 		
@@ -23,6 +30,13 @@ public class DatabaseController {
 		
 	}
 	
+
+//---------------------------------------------------------------------------------------------------------	
+	
+	
+	
+//------------------------------------------------------------------------------------------------------------	
+//	this method adds user to the database
 	
 	public int addUser(User user) {
 		
@@ -48,6 +62,39 @@ public class DatabaseController {
 		} 
 		return -1;
 	}
+	
+	
+//----------------------------------------------------------------------------------------------------------	
+
+	
+//----------------------------------------------------------------------------------------------------------	
+//	this method return result if the user name and password matched
+	
+	public int getUserLoginInfo(String userName, String password) {
+		
+		try (Connection conn = getConnection()){
+			PreparedStatement st = conn.prepareStatement(StringUtil.GET_LOGIN_INFO);
+			st.setString(1, userName);
+			st.setString(2, Encription.decrypt(password));
+			
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
+		
+	}
+
+//	--------------------------------------------------------------------------------------------------------
 	
 //	this is the last part done where the data re send to the database
 

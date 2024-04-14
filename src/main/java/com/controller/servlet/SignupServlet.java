@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.controller.DatabaseController;
+import com.controller.Encription;
 import com.model.User;
 import com.util.StringUtil;
 
@@ -30,7 +31,7 @@ public class SignupServlet extends HttpServlet{
 		String gender = req.getParameter(StringUtil.GENDER);
 		LocalDate dob = LocalDate.parse(req.getParameter(StringUtil.DOB));
 		String phoneNumber = req.getParameter(StringUtil.PHONE);
-		String password = req.getParameter(StringUtil.PASSWORD);
+		String password = Encription.encrypt(req.getParameter(StringUtil.PASSWORD));
 		String address = req.getParameter(StringUtil.ADDRESS);
 		
 //		this is the last work done where adding new user work is done 

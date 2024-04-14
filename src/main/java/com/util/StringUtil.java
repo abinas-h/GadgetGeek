@@ -15,6 +15,8 @@ public class StringUtil {
 										"(user_name, first_name, last_name, dob, gender, email, phone_number,password, address)"
 										+ "VALUES(?,?,?,?,?,?,?,?,?)";
 	
+	public static final String GET_LOGIN_INFO = "SELECT * from user where user_name = ? AND password = ?";
+	
 	
 	
 	public static final String SUCCESS_REGISTER_MESSAGE = "Successfully Registered";
