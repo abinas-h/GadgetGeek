@@ -35,7 +35,7 @@ public class SignupServlet extends HttpServlet{
 		String address = req.getParameter(StringUtil.ADDRESS);
 		
 //		this is the last work done where adding new user work is done 
-		User user = new User(fname, lname, dob, gender, email, phoneNumber, phoneNumber, username, password, address);
+		User user = new User(fname, lname, dob, gender, email, phoneNumber, username, password, address);
 		
 		
 		int result = databaseController.addUser(user);

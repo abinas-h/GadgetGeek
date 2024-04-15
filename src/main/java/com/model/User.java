@@ -9,7 +9,6 @@ public class User {
 	private String gender;
 	private String email;
 	private String phoneNumber;
-	private String subject;
 	private String username;
 	private String password;
 	private String address;
@@ -18,7 +17,7 @@ public class User {
 	
 	
 	public User(String firstName, String lastName, LocalDate dob, String gender, String email, String phoneNumber,
-			String subject, String username, String password, String address) {
+			 String username, String password, String address) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -26,7 +25,6 @@ public class User {
 		this.gender = gender;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.subject = subject;
 		this.username = username;
 		this.password = password;
 		this.address = address;
@@ -69,12 +67,7 @@ public class User {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getSubject() {
-		return subject;
-	}
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
+
 	public String getUsername() {
 		return username;
 	}

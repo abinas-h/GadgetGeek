@@ -75,11 +75,17 @@ public class DatabaseController {
 		try (Connection conn = getConnection()){
 			PreparedStatement st = conn.prepareStatement(StringUtil.GET_LOGIN_INFO);
 			st.setString(1, userName);
-			st.setString(2, Encription.decrypt(password));
+			st.setString(2, password);
+			
+			
+			System.out.println(userName);
+			System.out.println(password);
 			
 			ResultSet rs = st.executeQuery();
 			
 			if(rs.next()) {
+				
+				System.out.println(rs.getString("user_name"));
 				return 1;
 			}
 			else {
