@@ -6,7 +6,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.model.Product;
 import com.model.User;
 
 import com.util.StringUtil;
@@ -102,6 +105,67 @@ public class DatabaseController {
 
 //	--------------------------------------------------------------------------------------------------------
 	
-//	this is the last part done where the data re send to the database
-
+// 	---------------------------------------------------------------------------------------------------------
+	
+//	this method returns list of product that the user search
+	
+	public ArrayList<Product> getProduct(String search){
+		
+		Product product = null;
+		ArrayList<Product> products = new ArrayList<Product>();
+		try (Connection conn = getConnection()) {
+			
+			PreparedStatement st = conn.prepareStatement(StringUtil.PRODUCT_SEARCH);
+			st.setString(1, search );
+			 ResultSet rs =  st.executeQuery();
+			 
+			 
+			 while(rs.next()) {
+				 product = new Product();
+				 product.setProductID(rs.getInt("product_id"));
+				 product.setProductName(rs.getString("name"));
+				 product.setProductDesc(rs.getString("product_desc"));
+				 product.setCategory_id(rs.getInt(rs.getInt("category_id")));
+				 product.setUnitPrice(rs.getInt("unit_price"));
+				 
+				 products.add(product);
+				 
+				 System.out.println(" product aayo");
+				 
+				 System.out.println();
+				 System.out.println();
+				 System.out.println();
+				 System.out.println();
+				 System.out.println();
+				 System.out.println();
+				 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠶⠛⠳⣄⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⣻⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⠀⠘⡇⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠀⣀⣀⣠⣤⣾⠧⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⢀⡾⠋⠩⣍⡉⠀⠀⠘⢠⠀⠀⠀⠘⢧⡀⠀⠀⠀⠀⠀\r\n"
+				 		+ "⣾⠁⠀⠀⠀⠉⠑⢦⣄⣈⣇⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀\r\n"
+				 		+ "⣿⡄⠀⠀⠀⠀⠀⠀⢻⠁⠉⢳⡀⠀⠀⠀⢹⠛⠶⣄⠀\r\n"
+				 		+ "⡏⠙⠶⣄⡀⠀⠀⠀⠘⠂⠀⢀⡇⠀⠀⠀⢸⠃⠀⢹⡆\r\n"
+				 		+ "⣇⠀⠀⠈⠛⢦⡀⠀⡔⢀⣠⠾⣆⠀⠀⠀⢸⠀⠀⠀⣷\r\n"
+				 		+ "⢸⣆⠀⠀⠀⠀⠙⠛⠛⠋⠁⢀⡟⠛⠓⠋⠀⠀⠀⠀⡏\r\n"
+				 		+ "⢸⡏⠳⣄⠀⠀⠀⡇⠀⢀⣠⠞⢻⡄⠀⠀⡄⠀⠀⢰⠇\r\n"
+				 		+ "⠈⢧⠀⠈⠻⢶⣾⠷⠾⠋⠁⠀⣸⠁⠀⣸⠁⣀⡠⠋⠀\r\n"
+				 		+ "⠀⠈⢷⡀⠀⠀⠀⠀⠀⣀⣤⠞⢁⣠⠞⠉⠛⠉⠀⠀⠀\r\n"
+				 		+ "⠀⠀⠀⠉⠛⠒⠒⠚⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀");
+				 
+				 return products;
+			 }
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+			
+		}
+		
+		
+		return products;
+	}
 }

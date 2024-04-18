@@ -1,7 +1,7 @@
 package com.util;
 
 public class StringUtil {
-	public static String FIRST_NAME = "firstName";
+	public static final String FIRST_NAME = "firstName";
 	public static String LAST_NAME = "lastName";
 	public static String USER_NAME = "userName";
 	public static String EMAIL  = "email";
@@ -10,13 +10,16 @@ public class StringUtil {
 	public static String PHONE = "phoneNumber";
 	public static String PASSWORD  = "password";
 	public static String ADDRESS  = "address";
+	public static String SEARCH_PRODUCT  = "search";
+	
 	
 	
 	public static String INSERT_USER = "INSERT INTO USERS"+
 										"(user_name, first_name, last_name, dob, gender, email, phone_number,password, address)"
 										+ "VALUES(?,?,?,?,?,?,?,?,?)";
 	
-	public static final String GET_LOGIN_INFO = "SELECT * from users where user_name =? AND password =?";
+	public static final String GET_LOGIN_INFO = "SELECT * FROM users where user_name =? AND password =?";
+	public static final String PRODUCT_SEARCH = "SELECT * FROM product WHERE NAME = ? ";
 	
 	
 	
