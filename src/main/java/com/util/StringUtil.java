@@ -2,24 +2,24 @@ package com.util;
 
 public class StringUtil {
 	public static final String FIRST_NAME = "firstName";
-	public static String LAST_NAME = "lastName";
-	public static String USER_NAME = "userName";
-	public static String EMAIL  = "email";
-	public static String GENDER  = "gender";
-	public static String DOB = "dob";
-	public static String PHONE = "phoneNumber";
-	public static String PASSWORD  = "password";
-	public static String ADDRESS  = "address";
-	public static String SEARCH_PRODUCT  = "search";
+	public static final String LAST_NAME = "lastName";
+	public static final String USER_NAME = "userName";
+	public static final String EMAIL  = "email";
+	public static final String GENDER  = "gender";
+	public static final String DOB = "dob";
+	public static final String PHONE = "phoneNumber";
+	public static final String PASSWORD  = "password";
+	public static final String ADDRESS  = "address";
+	public static final String SEARCH_PRODUCT  = "search";
 	
 	
 	
-	public static String INSERT_USER = "INSERT INTO USERS"+
+	public static final String INSERT_USER = "INSERT INTO USERS"+
 										"(user_name, first_name, last_name, dob, gender, email, phone_number,password, address)"
 										+ "VALUES(?,?,?,?,?,?,?,?,?)";
 	
 	public static final String GET_LOGIN_INFO = "SELECT * FROM users where user_name =? AND password =?";
-	public static final String PRODUCT_SEARCH = "SELECT * FROM product WHERE NAME = ? ";
+	public static final String PRODUCT_SEARCH = "SELECT * FROM product WHERE NAME like ? ";
 	
 	
 	

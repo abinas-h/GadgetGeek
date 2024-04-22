@@ -7,6 +7,38 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <form action="../LoginServlet" method="post">
       <input type="text" name="userName" placeholder="email haan">
       <input type="text" name="password" placeholder="password haan">

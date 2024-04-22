@@ -88,6 +88,8 @@ public class DatabaseController {
 			
 			if(rs.next()) {
 				
+				
+				
 				System.out.println(rs.getString("user_name"));
 				return 1;
 			}
@@ -105,8 +107,10 @@ public class DatabaseController {
 
 //	--------------------------------------------------------------------------------------------------------
 	
-// 	---------------------------------------------------------------------------------------------------------
 	
+	
+	
+// 	---------------------------------------------------------------------------------------------------------	
 //	this method returns list of product that the user search
 	
 	public ArrayList<Product> getProduct(String search){
@@ -132,29 +136,6 @@ public class DatabaseController {
 				 
 				 System.out.println(" product aayo");
 				 
-				 System.out.println();
-				 System.out.println();
-				 System.out.println();
-				 System.out.println();
-				 System.out.println();
-				 System.out.println();
-				 System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠶⠛⠳⣄⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⣰⠃⠀⠀⠀⣻⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠀⠀⠀⠀⠀⢿⠀⠀⠀⠘⡇⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠀⣀⣀⣠⣤⣾⠧⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⢀⡾⠋⠩⣍⡉⠀⠀⠘⢠⠀⠀⠀⠘⢧⡀⠀⠀⠀⠀⠀\r\n"
-				 		+ "⣾⠁⠀⠀⠀⠉⠑⢦⣄⣈⣇⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀\r\n"
-				 		+ "⣿⡄⠀⠀⠀⠀⠀⠀⢻⠁⠉⢳⡀⠀⠀⠀⢹⠛⠶⣄⠀\r\n"
-				 		+ "⡏⠙⠶⣄⡀⠀⠀⠀⠘⠂⠀⢀⡇⠀⠀⠀⢸⠃⠀⢹⡆\r\n"
-				 		+ "⣇⠀⠀⠈⠛⢦⡀⠀⡔⢀⣠⠾⣆⠀⠀⠀⢸⠀⠀⠀⣷\r\n"
-				 		+ "⢸⣆⠀⠀⠀⠀⠙⠛⠛⠋⠁⢀⡟⠛⠓⠋⠀⠀⠀⠀⡏\r\n"
-				 		+ "⢸⡏⠳⣄⠀⠀⠀⡇⠀⢀⣠⠞⢻⡄⠀⠀⡄⠀⠀⢰⠇\r\n"
-				 		+ "⠈⢧⠀⠈⠻⢶⣾⠷⠾⠋⠁⠀⣸⠁⠀⣸⠁⣀⡠⠋⠀\r\n"
-				 		+ "⠀⠈⢷⡀⠀⠀⠀⠀⠀⣀⣤⠞⢁⣠⠞⠉⠛⠉⠀⠀⠀\r\n"
-				 		+ "⠀⠀⠀⠉⠛⠒⠒⠚⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀");
-				 
 				 return products;
 			 }
 			
@@ -168,4 +149,17 @@ public class DatabaseController {
 		
 		return products;
 	}
+//	----------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	last done work is search work complete but need to ask query question 
 }
